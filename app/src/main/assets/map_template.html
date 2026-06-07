@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SafeHer Live Tracker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <style>
+        body { margin: 0; padding: 0; background: #0F0F1E; }
+        #map { height: 100vh; width: 100vw; }
+        /* Custom styling for Leaflet controls to match SafeHer theme */
+        .leaflet-control-zoom { border: none !important; }
+        .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+            background-color: #1A1A2E !important;
+            color: #7C4DFF !important;
+            border: 1px solid #7C4DFF !important;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        var map = L.map('map', {
+            zoomControl: true,
+            attributionControl: false
+        }).setView([13.0827, 80.2707], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19
+        }).addTo(map);
+
+        var marker = L.marker([13.0827, 80.2707]).addTo(map);
+
+        // Custom circle to show accuracy/radius
+        var circle = L.circle([13.0827, 80.2707], {
+            color: '#7C4DFF',
+            fillColor: '#7C4DFF',
+            fillOpacity: 0.15,
+            radius: 50
+        }).addTo(map);
+
+        // Bridge function called from Android
+        function updateLocation(lat, lng) {
+            var newLatLng = new L.LatLng(lat, lng);
+            marker.setLatLng(newLatLng);
+            circle.setLatLng(newLatLng);
+            map.panTo(newLatLng);
+        }
+
+        // Apply dark mode filter to tiles
+        document.querySelector('.leaflet-tile-container').style.filter = 'invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%)';
+    </script>
+</body>
+</html>

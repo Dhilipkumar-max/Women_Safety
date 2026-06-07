@@ -1,0 +1,213 @@
+:root {
+    --bg-dark: #0F0F1E;
+    --surface-dark: #1A1A2E;
+    --surface-secondary: #252545;
+    --electric-violet: #7C4DFF;
+    --safety-green: #00E676;
+    --emergency-red: #FF5252;
+    --warning-amber: #FFAB00;
+    --text-primary: #FFFFFF;
+    --text-secondary: #B0B0C3;
+    --nav-height: 70px;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow: hidden;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+#content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    padding-bottom: calc(var(--nav-height) + 20px);
+}
+
+/* Bottom Navigation */
+#bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--surface-dark);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.4);
+    z-index: 1000;
+}
+
+.nav-item {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 10px;
+    border-radius: 12px;
+}
+
+.nav-item.active {
+    color: var(--electric-violet);
+    background: rgba(124,77,255,0.1);
+}
+
+.nav-item label {
+    font-size: 10px;
+    font-weight: 600;
+}
+
+/* Common UI Components */
+.header {
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.header p {
+    font-size: 11px;
+    color: var(--safety-green);
+    margin: 4px 0 0 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.card {
+    background: var(--surface-dark);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.status-banner {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(0, 230, 118, 0.1);
+    border: 1px solid rgba(0, 230, 118, 0.2);
+}
+
+.status-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--safety-green);
+    box-shadow: 0 0 10px var(--safety-green);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.stat-card .icon {
+    font-size: 28px;
+}
+
+.stat-card .value {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.stat-card .label {
+    font-size: 11px;
+    color: var(--text-secondary);
+}
+
+/* Map specific */
+#map-container {
+    height: 350px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 16px;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    background: #1A1A2E;
+}
+
+.leaflet-tile {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+/* Buttons */
+.btn-primary {
+    background: var(--electric-violet);
+    color: white;
+    border: none;
+    padding: 16px;
+    border-radius: 12px;
+    font-weight: 700;
+    width: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.sos-btn-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.sos-outer {
+    width: 150px;
+    height: 150px;
+    background: rgba(255, 82, 82, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.sos-inner {
+    width: 110px;
+    height: 110px;
+    background: var(--emergency-red);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    box-shadow: 0 0 30px rgba(255, 82, 82, 0.4);
+}
+
+.sos-inner h2 { margin: 0; font-size: 26px; font-weight: 900; }
+.sos-inner span { font-size: 10px; font-weight: 700; opacity: 0.8; }

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeHer Web Dashboard</title>
+    <!-- Google Fonts & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Map Support -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div id="app">
+        <!-- Main Content Area -->
+        <main id="content">
+            <!-- Screens will be injected here -->
+        </main>
+
+        <!-- Navigation Bar -->
+        <nav id="bottom-nav">
+            <button class="nav-item active" data-screen="dashboard">
+                <span class="material-icons-outlined">home</span>
+                <label>Dashboard</label>
+            </button>
+            <button class="nav-item" data-screen="biometrics">
+                <span class="material-icons-outlined">monitor_heart</span>
+                <label>Biometrics</label>
+            </button>
+            <button class="nav-item" data-screen="guardians">
+                <span class="material-icons-outlined">group</span>
+                <label>Guardians</label>
+            </button>
+            <button class="nav-item" data-screen="location">
+                <span class="material-icons-outlined">location_on</span>
+                <label>Tracker</label>
+            </button>
+            <button class="nav-item" data-screen="evidence">
+                <span class="material-icons-outlined">folder</span>
+                <label>Evidence</label>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
