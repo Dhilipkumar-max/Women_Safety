@@ -1,0 +1,6 @@
+{
+  "name": "SafeHer",
+  "description": "Autonomous Women Safety & Emergency Response system using biometrics and motion threat detection",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

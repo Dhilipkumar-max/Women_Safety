@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "648629699038",
+    "firebase_url": "https://sustain-f2837-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "sustain-f2837",
+    "storage_bucket": "sustain-f2837.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:648629699038:android:e69dad6b11e0eb4f249d4f",
+        "android_client_info": {
+          "package_name": "com.aistudio.safeher.tqyzwk"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7PitE1XAMNGTBpzf9fof0OZgGRHLifFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
